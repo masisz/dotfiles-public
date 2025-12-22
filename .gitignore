@@ -1,0 +1,14 @@
+# Neovim
+neovim/.config/nvim/lazy-lock.json
+neovim/.config/nvim/.neoconf.json
+
+# Tmux plugins
+tmux/.config/tmux/plugins/*/.git/
+
+# Zsh
+zsh/.zsh_history
+
+# Backup files
+*.swp
+*.bak
+*~
