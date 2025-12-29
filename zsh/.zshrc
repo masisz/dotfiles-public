@@ -1,25 +1,21 @@
 export LANG=ja_JP.UTF-8
 
 if [ -d "/opt/homebrew/opt/tree-sitter-cli/bin" ]; then
-  export PATH="/opt/homebrew/opt/tree-sitter-cli/bin:/$PATH"
+  export PATH="/opt/homebrew/opt/tree-sitter-cli/bin:$PATH"
 end
 
-# Ruby required rbenv
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
-# Rust
 if [ -e "$HOME/.cargo" ]; then
   source "$HOME/.cargo/env"
 fi
 
-# C# required dotnet-sdk and netcoredbg
 if [ -e "$HOME/.dotnet" ]; then
   export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
-# zoxide
 eval "$(zoxide init zsh)"
 
 autoload -Uz colors
@@ -35,8 +31,6 @@ setopt share_history
 setopt pushd_ignore_dups
 setopt no_beep
 
-# alias ls='ls -F --color=auto'
-# alias ll='ls -lF --color=auto'
 alias ls='eza'
 alias la='ls -a'
 alias rm='rm -i'
