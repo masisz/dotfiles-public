@@ -1,0 +1,36 @@
+# Wisteria theme for Ghostty
+# Author: masisz
+# Origin: https://github.com/masisz/wisteria.nvim
+# Version: transparent-optimized
+
+# Basic colors
+foreground = c5c5c5
+background = 001217
+
+# Cursor
+cursor-color = 8fa8aa
+cursor-text = 002831
+
+# Selection
+selection-foreground = a0b5b5
+selection-background = 003545
+
+# ANSI colors (0-7)
+palette = 0=003545
+palette = 1=c44f4f
+palette = 2=8ab020
+palette = 3=e6d5a8
+palette = 4=8fadce
+palette = 5=ddc8f2
+palette = 6=8ed49a
+palette = 7=f5ead5
+
+# Bright colors (8-15)
+palette = 8=5a7580
+palette = 9=bd3613
+palette = 10=5a7580
+palette = 11=6a8088
+palette = 12=8fa8aa
+palette = 13=7068d0
+palette = 14=a0b5b5
+palette = 15=fffdf0

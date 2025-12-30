@@ -1,0 +1,51 @@
+# window
+window-save-state = default
+window-inherit-working-directory = true
+
+# macos only
+macos-option-as-alt = true
+
+# font 
+font-family = "HackGen35 Bold"
+font-size = 14.0
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# backgroud
+background-opacity     = 0.80
+background-blur-radius = 15
+theme = wisteria
+
+# mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# cursor
+cursor-opacity = 0.7
+unfocused-split-opacity = 0.825
+
+# clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+# key bindings
+
+## new split
+keybind = alt+-=new_split:down
+keybind = alt+shift+\=new_split:right
+
+## resize split
+keybind = alt+shift+h=resize_split:left,30
+keybind = alt+shift+j=resize_split:down,30
+keybind = alt+shift+k=resize_split:up,30
+keybind = alt+shift+l=resize_split:right,30
+
+## move split
+keybind = cmd+h=goto_split:left
+keybind = cmd+j=goto_split:bottom
+keybind = cmd+k=goto_split:top
+keybind = cmd+l=goto_split:right
+
+keybind = cmd+shift+m=toggle_split_zoom
+keybind = shift+enter=text:\n
