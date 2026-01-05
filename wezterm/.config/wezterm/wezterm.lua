@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 
 -- font configuration
 config.font = wezterm.font(
-  'HackGen35', { weight = 'Bold' }
+  'HackGen35　Console　NF'
 )
 
 config.font_size = 13.5
