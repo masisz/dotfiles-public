@@ -61,6 +61,11 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():set_inner_size(800, 1200)
 end)
 
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  -- Windows のときだけ WSL を起動
+  config.default_prog = { "wsl.exe", "-d", "Ubuntu-24.04" }
+end
+
 config.mouse_bindings = {
 	{
 		-- copy clipboard from mouse right click
