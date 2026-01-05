@@ -14,9 +14,9 @@ config.font = wezterm.font(
 config.font_size = 13.5
 config.line_height = 1.1
 
--- load ashikaga color scheme
-local ashikaga = require("colors.wisteria")
-config.colors = ashikaga.colors
+-- load wisteria color scheme
+local wisteria = require("colors.wisteria")
+config.colors = wisteria.colors
 
 config.automatically_reload_config = true
 config.audible_bell = "Disabled"
