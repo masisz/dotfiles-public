@@ -64,10 +64,15 @@ end)
 config.mouse_bindings = {
 	{
 		-- copy clipboard from mouse right click
-		event = { Down = { streak = 1, button = "Right" } },
+		event = { Down = { streak = 1, button = "Left" } },
 		mods = "NONE",
-		action = wezterm.action.PasteFrom("Clipboard"),
+		action = wezterm.action.CompleteSelection 'Clipboard',
 	},
+  {
+    event = { Down = { streak = 1, button = 'Right' } },
+    mods = 'NONE',
+    action = wezterm.action.PasteFrom 'Clipboard',
+  },
 }
 
 -- customize key bindings
@@ -78,6 +83,22 @@ config.disable_default_key_bindings = true
 local keybind = require("keybindings")
 config.keys = keybind.keys
 config.key_tables = keybind.key_tables
+
+
+config.keys = {
+    -- Copy
+    {
+      key = 'C',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.CopyTo 'Clipboard',
+    },
+    -- Paste
+    {
+      key = 'V',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.PasteFrom 'Clipboard',
+    },
+}
 
 -- disable pane controll, becase i using tmux.  
 -- config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
