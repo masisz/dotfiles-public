@@ -3,7 +3,7 @@ neovim/.config/nvim/lazy-lock.json
 neovim/.config/nvim/.neoconf.json
 
 # Tmux plugins
-tmux/.config/tmux/plugins/*/.git/
+tmux/.config/tmux/plugins
 
 # Zsh
 zsh/.zsh_history

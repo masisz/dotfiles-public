@@ -12,9 +12,9 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
-# backgroud
+# background
 background-opacity     = 0.80
-background-blur-radius = 15
+background-blur        = 15
 theme = wisteria
 
 # mouse
@@ -25,9 +25,13 @@ mouse-scroll-multiplier = 2
 cursor-opacity = 0.7
 unfocused-split-opacity = 0.825
 
-# clipboard
+# clipboard (Ghostty 1.4.0: copy-on-select defaults to none on macOS; use clipboard/none explicitly)
 clipboard-read = allow
 clipboard-write = allow
+copy-on-select = clipboard
+
+# split (Ghostty 1.4.0: drag-handle controls split drag handles: auto, always, never)
+drag-handle = auto
 
 # key bindings
 
@@ -49,3 +53,7 @@ keybind = cmd+l=goto_split:right
 
 keybind = cmd+shift+m=toggle_split_zoom
 keybind = shift+enter=text:\n
+
+## scroll / navigation (Ghostty 1.4.0: cmd+arrow_up/down reverted to jump_to_prompt; uncomment if 1.3 scroll_to_top/bottom is preferred)
+# keybind = cmd+arrow_up=scroll_to_top
+# keybind = cmd+arrow_down=scroll_to_bottom
