@@ -11,9 +11,8 @@ return {
 
       local luasnip = require("luasnip")
       local cmp = require("cmp")
-      opts.sources = cmp.config.sources({
-        {name = "path"}
-      })
+      opts.sources = opts.sources or {}
+      table.insert(opts.sources, { name = "emoji" })
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
