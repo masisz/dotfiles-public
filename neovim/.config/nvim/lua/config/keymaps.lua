@@ -25,7 +25,7 @@ vim.keymap.set("c", "<D-v>", '<C-r>+')
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "Replace word under cursor (ignore case, confirm)" })
 
 -- task
-vim.keymap.set("n", "<leader>Tn", "<Cmd>TaskNew<CR>", { desc = "新規タスク" })
+vim.keymap.set("n", "<leader>Tn", "<Cmd>TodoNew<CR>", { desc = "新規タスク" })
 
 -- markdown
 vim.api.nvim_create_autocmd("FileType", {
