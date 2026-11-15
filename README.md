@@ -31,7 +31,7 @@ This repository contains my personal dotfiles designed for cross-platform compat
 
 ### Included Configurations
 
-- **Neovim**: Modern Vim-based editor with LazyVim
+- **Neovim**: Ultra-fast environment powered by [masisz.nvim](https://github.com/masisz/masisz.nvim) (usurai.nvim + todo.nvim + article.nvim)
 - **tmux**: Terminal multiplexer
 - **zsh**: Shell configuration with Powerlevel10k theme
 - **WezTerm**: Terminal emulator settings

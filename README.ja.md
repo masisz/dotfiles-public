@@ -31,7 +31,7 @@
 
 ### 含まれる設定
 
-- **Neovim**: LazyVimベースのモダンなVimエディタ
+- **Neovim**: [masisz.nvim](https://github.com/masisz/masisz.nvim) ベースの超高速エディタ環境（usurai.nvim + todo.nvim + article.nvim）
 - **tmux**: ターミナルマルチプレクサ
 - **zsh**: Powerlevel10kテーマを使用したシェル設定
 - **WezTerm**: ターミナルエミュレータ設定

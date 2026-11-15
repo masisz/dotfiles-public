@@ -24,12 +24,6 @@ else
 end
 
 return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "wisteria",
-    },
-  },
   wisteria_spec,
   {
     "nvim-lualine/lualine.nvim",

@@ -1,16 +1,35 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+-- ============================================================================
+-- Options Configuration (masisz.nvim based)
+-- ============================================================================
 
-vim.g.lazyvim_ruby_lsp = "ruby_lsp"
-vim.g.lazyvim_ruby_formatter = "rubocop"
-vim.g.lazyvim_picker = "snacks"
-vim.g.lazyvim_prettier_needs_config = false
-vim.g.lazyvim_eslint_auto_format = false
-vim.g.autoformat = false
-vim.g.lazyvim_mini_snippets_in_completion = true
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
--- OS-specific article & todo directory paths
+-- Configure usurai.nvim settings
+vim.g.usurai = {
+  colorscheme = "wisteria",
+  langs = {
+    lua = true,
+    markdown = true,
+    data = true,       -- JSON, YAML, TOML
+    shell = true,      -- Bash / Zsh
+    pwsh = true,       -- PowerShell Core
+    docker = true,     -- Dockerfile & Compose
+    python = true,     -- Python (pyright)
+    typescript = true, -- TypeScript / JavaScript (vtsls)
+    rust = true,       -- Rust (rust_analyzer)
+    zig = true,        -- Zig (zls)
+    ruby = true,       -- Ruby (ruby_lsp)
+    cpp = true,        -- C / C++ (clangd)
+    go = true,         -- Go (gopls)
+    java = false,      -- Java (jdtls, optional)
+    csharp = false,    -- C# (omnisharp, optional)
+    sql = true,        -- SQL (sqlls)
+  },
+}
+
+-- OS-Specific Directory Settings (Windows, macOS, Linux)
 vim.g.masisz = {
   article_paths = {
     windows = "~/Documents/articles",
@@ -24,14 +43,22 @@ vim.g.masisz = {
   },
 }
 
-vim.opt.termguicolors = true
-vim.opt.cursorline = false
-vim.opt.hlsearch = false
+-- General options
+local opt = vim.opt
 
-vim.opt.guicursor = {
-  "n-v-c:block-blinkon0",
-  "i-ci-ve:ver25-blinkon0",
-  "r-cr:hor20-blinkon0",
-  "o:hor50-blinkon0",
-  "sm:block-blinkon0",
-}
+opt.number = true
+opt.relativenumber = true
+opt.mouse = "a"
+opt.clipboard = "unnamedplus"
+opt.undofile = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.signcolumn = "yes"
+opt.updatetime = 250
+opt.timeoutlen = 300
+opt.termguicolors = true
+opt.splitright = true
+opt.splitbelow = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true

@@ -1,5 +1,5 @@
 -- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- masisz.nvim base configuration
 -- Add any additional keymaps here
 
 -- select all
@@ -23,9 +23,6 @@ vim.keymap.set("c", "<D-v>", '<C-r>+')
 
 -- replace
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "Replace word under cursor (ignore case, confirm)" })
-
--- task
-vim.keymap.set("n", "<leader>Tn", "<Cmd>TodoNew<CR>", { desc = "新規タスク" })
 
 -- markdown
 vim.api.nvim_create_autocmd("FileType", {
