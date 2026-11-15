@@ -10,6 +10,20 @@ vim.g.lazyvim_eslint_auto_format = false
 vim.g.autoformat = false
 vim.g.lazyvim_mini_snippets_in_completion = true
 
+-- OS-specific article & todo directory paths
+vim.g.masisz = {
+  article_paths = {
+    windows = "~/Documents/articles",
+    mac = "~/articles",
+    linux = "~/articles",
+  },
+  todo_paths = {
+    windows = "~/Documents/todos",
+    mac = "~/todos",
+    linux = "~/todos",
+  },
+}
+
 vim.opt.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.hlsearch = false

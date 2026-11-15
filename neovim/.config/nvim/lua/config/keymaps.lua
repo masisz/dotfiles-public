@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     local map = vim.keymap.set
-    local opts = { silent = true, buf = true }
+    local opts = { silent = true, buffer = true }
 
     -- Insert: 行頭に入れて Insert に戻る
     map("i", "<M-1>", "<Esc>I# <Esc>i", opts)
