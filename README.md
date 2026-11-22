@@ -11,7 +11,7 @@ This repository contains my personal dotfiles designed for cross-platform compat
 - **Cross-platform support**: Configurations work seamlessly on both macOS and Windows (WSL)
 - **Unified terminal experience**: Uses WezTerm as a terminal emulator for both platforms
 - **Japanese language support**: HackGen font for proper Japanese character display
-- **Modern development tools**: Neovim, tmux, zsh configurations included
+- **Modern development tools**: tmux, Zellij, zsh, and WezTerm configurations included
 
 ## Key Components
 
@@ -31,8 +31,9 @@ This repository contains my personal dotfiles designed for cross-platform compat
 
 ### Included Configurations
 
-- **Neovim**: Ultra-fast environment powered by [masisz.nvim](https://github.com/masisz/masisz.nvim) (usurai.nvim + todo.nvim + article.nvim)
+- **Neovim**: Managed in a separate repository — [masisz.nvim](https://github.com/masisz/masisz.nvim) (usurai.nvim + todo.nvim + article.nvim)
 - **tmux**: Terminal multiplexer
+- **Zellij**: Terminal multiplexer
 - **zsh**: Shell configuration with Powerlevel10k theme
 - **WezTerm**: Terminal emulator settings
 
@@ -64,13 +65,13 @@ This repository contains my personal dotfiles designed for cross-platform compat
 3. Use stow to symlink configurations:
    ```bash
    # Install all configurations
-   stow neovim zsh tmux wezterm
+   stow zsh tmux wezterm zellij
 
    # Or install individually
-   stow neovim
    stow zsh
    stow tmux
    stow wezterm
+   stow zellij
    ```
 
 ## Requirements
@@ -107,8 +108,8 @@ Download and install from: https://github.com/yuru7/HackGen
 
 Each configuration can be customized individually:
 
-- **Neovim**: Edit files in `neovim/.config/nvim/lua/`
 - **tmux**: Edit `tmux/.config/tmux/tmux.conf`
+- **Zellij**: Edit `zellij/.config/zellij/config.kdl`
 - **zsh**: Edit `zsh/.zshrc` and `zsh/.p10k.zsh`
 - **WezTerm**: Edit `wezterm/.config/wezterm/wezterm.lua`
 

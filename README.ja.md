@@ -11,7 +11,7 @@
 - **クロスプラットフォーム対応**: macOSとWindows（WSL）の両方でシームレスに動作
 - **統一されたターミナル体験**: 両プラットフォームでWezTermを使用
 - **日本語サポート**: HackGenフォントによる日本語文字の適切な表示
-- **モダンな開発ツール**: Neovim、tmux、zshの設定を含む
+- **モダンな開発ツール**: tmux、Zellij、zsh、WezTermの設定を含む
 
 ## 主要コンポーネント
 
@@ -31,8 +31,9 @@
 
 ### 含まれる設定
 
-- **Neovim**: [masisz.nvim](https://github.com/masisz/masisz.nvim) ベースの超高速エディタ環境（usurai.nvim + todo.nvim + article.nvim）
+- **Neovim**: 別リポジトリ [masisz.nvim](https://github.com/masisz/masisz.nvim) に移行済み（usurai.nvim + todo.nvim + article.nvim）
 - **tmux**: ターミナルマルチプレクサ
+- **Zellij**: ターミナルマルチプレクサ
 - **zsh**: Powerlevel10kテーマを使用したシェル設定
 - **WezTerm**: ターミナルエミュレータ設定
 
@@ -64,13 +65,13 @@
 3. stowを使用して設定をシンボリックリンク:
    ```bash
    # すべての設定をインストール
-   stow neovim zsh tmux wezterm
+   stow zsh tmux wezterm zellij
 
    # または個別にインストール
-   stow neovim
    stow zsh
    stow tmux
    stow wezterm
+   stow zellij
    ```
 
 ## 必要なツール
@@ -107,8 +108,8 @@
 
 各設定は個別にカスタマイズ可能です:
 
-- **Neovim**: `neovim/.config/nvim/lua/`内のファイルを編集
 - **tmux**: `tmux/.config/tmux/tmux.conf`を編集
+- **Zellij**: `zellij/.config/zellij/config.kdl`を編集
 - **zsh**: `zsh/.zshrc`と`zsh/.p10k.zsh`を編集
 - **WezTerm**: `wezterm/.config/wezterm/wezterm.lua`を編集
 
