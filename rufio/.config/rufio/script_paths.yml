@@ -1,0 +1,11 @@
+# ~/.config/rufio/script_paths.yml
+# スクリプトディレクトリの一覧
+#
+# ここに登録されたディレクトリ内のスクリプトは、
+# rufio のコマンドモード (:) から実行できます。
+#
+# 例: :build  -> script_paths 内の build.sh や build.rb を実行
+
+- ~/.config/rufio/scripts
+- ~/bin
+- ~/scripts

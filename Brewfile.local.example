@@ -1,0 +1,16 @@
+# Local machine-specific Homebrew packages (NOT tracked by Git)
+# Copy this file to one of the following paths (or run `./setup-macos.zsh --init-local`):
+#   - ./Brewfile.local          (in this repository root, gitignored)
+#   - ~/.Brewfile.local         (in your HOME directory)
+#
+# You can also pass any additional Brewfile via:
+#   ./setup-macos.zsh --extra-file ~/Brewfile.work
+
+# Example: machine-specific CLI tools
+# brew "awscli"
+# brew "kubectl"
+
+# Example: machine-specific apps or fonts
+# cask "zed"
+# cask "docker"
+# cask "font-jetbrains-mono-nerd-font"

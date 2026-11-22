@@ -32,47 +32,88 @@ This repository contains my personal dotfiles designed for cross-platform compat
 ### Included Configurations
 
 - **Neovim**: Managed in a separate repository — [masisz.nvim](https://github.com/masisz/masisz.nvim) (usurai.nvim + todo.nvim + article.nvim)
+- **Ghostty**: Terminal emulator settings & Wisteria theme
+- **WezTerm**: Cross-platform terminal emulator settings & Wisteria theme
+- **Starship**: Shell prompt configuration
 - **tmux**: Terminal multiplexer
 - **Zellij**: Terminal multiplexer
-- **zsh**: Shell configuration with Powerlevel10k theme
-- **WezTerm**: Terminal emulator settings
+- **zsh**: Shell configuration
+- **PowerShell**: Windows shell profile (`starship`, `zoxide`, `eza`, `bat`, `neovim`)
+- **Karabiner-Elements**: macOS keyboard customization
+- **Zed**: Editor settings
+- **Git / GitHub CLI (`gh`)**: Global gitignore & `gh` CLI preferences (credentials excluded)
+- **rufio**: Terminal file manager settings
 
 ## Installation
 
 ### Prerequisites
 
-- **macOS**: Homebrew
-- **Windows**: WSL2 (Ubuntu or similar)
-- GNU Stow (for symlink management)
+- **macOS**: Homebrew, Zsh
+- **Windows**: PowerShell 5.1 / 7 (with Developer Mode enabled or Administrator privileges for symlinks) and/or WSL2
 
 ### Quick Start
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/dotfiles-public.git ~/dotfiles-public
+   git clone https://github.com/masisz/dotfiles-public.git ~/dotfiles-public
    cd ~/dotfiles-public
    ```
 
-2. Install GNU Stow:
-   ```bash
-   # macOS
-   brew install stow
+2. (Optional) Install required packages and clone [masisz.nvim](https://github.com/masisz/masisz.nvim):
 
-   # WSL/Ubuntu
-   sudo apt install stow
+   **macOS (Homebrew)**:
+   ```zsh
+   # Check which packages are missing
+   ./setup-macos.zsh --check
+
+   # Install packages and clone masisz.nvim into ~/.config/nvim (use --skip-nvim to skip)
+   ./setup-macos.zsh
+
+   # Optional: create a machine-specific local Brewfile (~/.Brewfile.local)
+   ./setup-macos.zsh --init-local
    ```
 
-3. Use stow to symlink configurations:
-   ```bash
-   # Install all configurations
-   stow zsh tmux wezterm zellij
+   **Windows (winget)**:
+   ```powershell
+   # Check which packages are missing
+   .\setup-windows.ps1 -Check
 
-   # Or install individually
-   stow zsh
-   stow tmux
-   stow wezterm
-   stow zellij
+   # Install Windows-compatible packages and clone masisz.nvim into %LOCALAPPDATA%\nvim (use -SkipNvim to skip)
+   .\setup-windows.ps1
+
+   # Optional: create a machine-specific local package list (~\.winget-packages.local.json)
+   .\setup-windows.ps1 -InitLocal
    ```
+
+   Machine-specific packages can be kept outside Git in `./Brewfile.local` or `~/.Brewfile.local` (macOS), and `.\winget-packages.local.json` or `~\.winget-packages.local.json` (Windows), or passed via `--extra-file` / `-ExtraFiles`. Templates are provided as `Brewfile.local.example` and `winget-packages.local.json.example`.
+
+3. Create symlinks using the installer script (no GNU Stow required):
+
+   **macOS / Linux / WSL (Zsh)**:
+   ```zsh
+   # Preview changes without modifying anything
+   ./install.zsh --dry-run
+
+   # Link all packages (macOS-only packages like karabiner are skipped on Linux/WSL)
+   ./install.zsh
+
+   # Or link specific packages only
+   ./install.zsh ghostty wezterm starship
+   ```
+
+   **Windows (PowerShell)**:
+   ```powershell
+   # Preview changes without modifying anything
+   .\install.ps1 -DryRun
+
+   # Link Windows-native packages (wezterm, starship, powershell, git, zellij)
+   .\install.ps1
+
+   # Or link specific packages only
+   .\install.ps1 -Packages wezterm, starship
+   ```
+
+   Existing regular files are automatically backed up to `~/.dotfiles_backup/<timestamp>/` before creating symlinks. To remove symlinks managed by this repository, run `./install.zsh --unlink` or `.\install.ps1 -Unlink`.
 
 ## Requirements
 
@@ -108,10 +149,13 @@ Download and install from: https://github.com/yuru7/HackGen
 
 Each configuration can be customized individually:
 
+- **Ghostty**: Edit `ghostty/.config/ghostty/config`
+- **WezTerm**: Edit `wezterm/.config/wezterm/wezterm.lua`
+- **Starship**: Edit `starship/.config/starship.toml`
 - **tmux**: Edit `tmux/.config/tmux/tmux.conf`
 - **Zellij**: Edit `zellij/.config/zellij/config.kdl`
-- **zsh**: Edit `zsh/.zshrc` and `zsh/.p10k.zsh`
-- **WezTerm**: Edit `wezterm/.config/wezterm/wezterm.lua`
+- **zsh**: Edit `zsh/.zshrc` (put machine-specific settings in `~/.zshrc.local`)
+- **PowerShell**: Edit `powershell/.config/powershell/Microsoft.PowerShell_profile.ps1` (put machine-specific settings in `~\.powershell_profile.local.ps1`)
 
 ## Platform-Specific Notes
 

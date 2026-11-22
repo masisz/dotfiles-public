@@ -1,10 +1,29 @@
 # Tmux plugins
 tmux/.config/tmux/plugins
 
-# Zsh
+# Zsh / PowerShell
 zsh/.zsh_history
+zsh/.zshrc.local
+powershell/.config/powershell/*.local.ps1
 
-# Backup files
+# Sensitive / local-only files (never commit)
+gh/.config/gh/hosts.yml
+zed/.config/zed/conversations
+zed/.config/zed/prompts
+rufio/.config/rufio/logs
+rufio/.config/rufio/notices
+rufio/.config/rufio/bookmarks.*
+karabiner/.config/karabiner/automatic_backups
+
+# Local Brewfile / winget files & lockfile
+Brewfile.local
+Brewfile.*.local
+Brewfile.lock.json
+winget-packages.local.json
+winget-packages.*.local.json
+
+# OS & backup files
+.DS_Store
 *.swp
 *.bak
 *~

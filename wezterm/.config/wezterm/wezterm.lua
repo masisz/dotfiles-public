@@ -71,6 +71,7 @@ config.window_padding = {
 
 if is_windows then
   config.default_prog = { "pwsh.exe" }
+  config.default_cwd = "E:\\"
 end
 
 -- Key bindings (aligned with Ghostty while retaining standard shortcuts & existing leader bindings)
@@ -110,15 +111,11 @@ config.keys = {
   -- Shift+Enter sends newline (Ghostty: shift+enter=text:\n)
   { key = "Enter", mods = "SHIFT", action = act.SendString("\n") },
 
-  -- Existing Leader & Ctrl bindings
+  -- Existing Leader bindings
   { key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { key = "|", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
   { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
   { key = "w", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
-  { key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
-  { key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
-  { key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
-  { key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
   { key = "p", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
 }
 

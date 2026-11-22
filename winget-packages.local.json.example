@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "GitHub.cli",
+    "eza-community.eza",
+    "sharkdp.fd",
+    "junegunn.fzf"
+  ]
+}

@@ -1,5 +1,5 @@
 # window
-window-save-state = default
+window-save-state = always
 window-inherit-working-directory = true
 
 # macos only
@@ -13,7 +13,7 @@ font-feature = -liga
 font-feature = -dlig
 
 # background
-background-opacity     = 0.80
+background-opacity     = 0.85
 background-blur        = 15
 theme = wisteria
 
